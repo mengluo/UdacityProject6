@@ -20,17 +20,17 @@ sudo ufw allow 2200/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow ntp
 sudo ufw allow 123/udp
-sudo ufw enable 
+sudo ufw enable
 ```
 5. Verify the rules are active: `sudo ufw status`
 
 ## Add a new user named grader
 1. Create a new user account named grader: `sudo adduser grader`
-2. Give grader the permission to sudo: 
+2. Give grader the permission to sudo:
    a.Open and copy the content for ubuntu user in sudoers -- `nano /etc/sudoers`
    b.Create grader file -- `nano touch /etc/sudoers.d/grader`
    c. Paste the and save the content in grader file
-3. Create an SSH key pair for grader using the ssh-keygen tool on your local machine: `sudo ssh-keygen ~/.ssh/LinuxCourse`
+3. Create an SSH key pair for grader using the ssh-keygen tool on your local machine: `sudo ssh-keygen ~/.ssh/LinuxCourse.rsa`
 4. Copy the content from the public key file generated: `sudo nano ~/.ssh/LinuxCourse.pub`
 5. The privatee key will be saved on your local machine as LinuxCourse in ~/.ssh
 6. Switch to user grader: `sudo su - grader`
@@ -142,8 +142,8 @@ HTTP port: `80`
 NTP port: `123`
 
 ## How to ssh login as the grader:
-1. Download the private key file 'LinuxCourse' to put under '~/.ssh' on local machine
-2. Open terminal and do SSH login on local machine: `sudo ssh -i ~/.ssh/LinuxCourse grader@18.188.39.140 -p 2200`
+1. Download the private key file 'LinuxCourse.rsa' to put under '~/.ssh' on local machine
+2. Open terminal and do SSH login on local machine: `sudo ssh -i ~/.ssh/LinuxCourse.rsa grader@18.188.39.140 -p 2200`
 3. Enter your machine credentials: ******
 4. Enter passphrase for key 'LinuxCourse': 1234567890
 
